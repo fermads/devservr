@@ -1,0 +1,27 @@
+<script>
+(function(){
+
+  function get() {
+    var req = new XMLHttpRequest();
+
+    req.open('GET', '/live-reload');
+    req.send();
+
+    req.onreadystatechange = function() {
+      if(req.readyState === 4 && req.status === 200) {
+        if(req.responseText == 'RELOAD') {
+          console.log('[devserver] reloaded at '+ new Date().toLocaleString());
+          location.reload(true);
+        }
+      }
+    };
+
+    req.addEventListener('error', function(){
+      console.log('[devservr] disconnected. Trying to reconnect...');
+      setTimeout(get, 1000);
+    }, false);
+  }
+  get();
+
+})();
+</script>

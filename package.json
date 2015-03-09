@@ -1,0 +1,19 @@
+{
+  "name": "devservr",
+  "version": "1.0.0",
+  "description": "Simple webserver with routes support and live reload for quick single page app development",
+  "main": "index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "keywords": [
+    "web",
+    "server",
+    "http",
+    "development"
+  ],
+  "author": "fermads",
+  "license": "ISC"
+}

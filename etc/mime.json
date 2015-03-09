@@ -1,0 +1,15 @@
+{
+  "json" : "application/json",
+  "xml"  : "application/xml",
+  "js"   : "application/javascript",
+  "css"  : "text/css",
+  "less" : "text/css",
+  "hbs"  : "text/x-handlebars-template",
+  "html" : "text/html",
+  "htm"  : "text/html",
+  "txt"  : "text/plain",
+  "jpg"  : "image/jpeg",
+  "jpeg" : "image/jpeg",
+  "gif"  : "image/gif",
+  "png"  : "image/png"
+}
