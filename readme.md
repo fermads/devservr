@@ -70,7 +70,7 @@ This will be the "else" route if every other route fails to match and there is n
 5. Open http://localhost/ on your browser
 6. Edit a file, save, and watch it reload automatically
 
-It'll work with all files on the base folder. If you have a <script src="myscript.js"> file inside your index.html and myscript.js changes, then index.html will also reload.
+It'll work with all files on the base folder. If there is a `<script src="myscript.js">` inside your index.html and myscript.js changes, then index.html will also reload.
 
 
 ## Mime types
