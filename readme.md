@@ -28,7 +28,7 @@ is detected.
 A small javascript code snippet will be dynamically inserted before the
 `</body>`. This script will manage page reloads.
 
-## Configuring routes
+## Routes
 
 ##### Exact routes
 Routes with exact match.
@@ -40,7 +40,9 @@ When path is "/test" serve file "/test/test.html"
 
 ##### Variable routes
 Urls with variables.
+
     "/product/:id" : "/product.html"
+
 Path /product with any :id will match to /product.html. Your frontend should
 work with the id to do something
 
@@ -52,12 +54,13 @@ static file
 
 ##### The */ route
 Default file for paths that point to a directory
+
     "*/": "index.html"
 
 
 ##### The * route
 This will be the "else" route if every other route fails to match and there is
-no static file on disc with that path. It'll probably be a 404 not found page.
+no static file on disc with that path. Usually a 404 not found page.
 
 
 ##### Default routes.json
@@ -68,31 +71,17 @@ no static file on disc with that path. It'll probably be a 404 not found page.
 }
 ```
 
-## Usage example
-1. Create a new project
-
-    mkdir myproject && cd myproject && mkdir wwwroot
-
-2. Edit html, add your code, save, exit
-
-    vi index.html
-
-3. Install devservr
-
-    npm install -g devservr
-
-4. Run
-
-    ./devservr
-
+## Example
+1. Create a new project `mkdir myproject && cd myproject`
+2. Create a .html, add your code, save, exit
+3. Install devservr `npm install -g devservr`
+4. Run `./devservr`
 5. Open http://localhost/ on your browser
-
 6. Edit a file, save, and watch it reload automatically
 
 It'll work with all files on the base folder. If there is a
 `<script src="myscript.js">` inside your index.html and myscript.js changes,
 then index.html will also reload.
-
 
 ## Mime types
 Mime types are at `devservr/etc/mime.json`
@@ -102,7 +91,7 @@ Do not use devservr in production. All file reads are synchronous and
 not cached.
 
 ## To-do
-- directory listings?
+- directory listings
 - default routes.json should try ./routes.json first
 - routes should accept a status code as a response to make it easy to test
 REST services. { "/api/save" : 200 }
