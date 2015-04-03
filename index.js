@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-var server = require('./app/server')
-var router = require('./app/router')
-var watcher = require('./app/watcher')
-var options = require('./app/cmdline')
+var server = require('./src/server')
+var router = require('./src/router')
+var watcher = require('./src/watcher')
+var options = require('./src/cmdline')
 
 server.init(options)
 watcher.init(options)
