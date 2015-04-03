@@ -1,7 +1,7 @@
 {
   "name": "devservr",
-  "version": "1.0.0",
-  "description": "Simple webserver with routes support and live reload for quick single page app development",
+  "version": "1.0.1",
+  "description": "Webserver for quick development of single page apps with live-reload and dynamic routes",
   "main": "index.js",
   "bin": "./index.js",
   "scripts": {

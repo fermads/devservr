@@ -1,5 +1,5 @@
 
-## Purpose
+## Devservr
 
 Webserver for quick development of single page apps with live-reload and dynamic routes
 
@@ -86,5 +86,6 @@ Do not even think about using this in production. All file reads are synchronous
 
 ## To-do
 - directory listings?
+- default routes.json should try ./routes.json first
 - routes should accept a status code as a response to make it easy to test REST services. { "/api/save" : 200 }
 - looks like fs.watch on windows with {recursive:true} is not recursive. Triggers only on base path changes.
