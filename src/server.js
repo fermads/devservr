@@ -16,14 +16,14 @@ function init(options) {
   basepath = options.basepath || basepath
 
   snippet = fs.readFileSync(__dirname +'/../etc/snippet.html')
-      .toString().replace(/[\n\r]/g, '').replace(/ +/g, ' ')
+    .toString().replace(/[\n\r]/g, '').replace(/ +/g, ' ')
 
   start()
 }
 
 function start() {
   http.Server(function(req, res) {
-    var pathname = url.parse(req.url).pathname;
+    var pathname = url.parse(req.url).pathname
 
     if(pathname == '/live-reload') {
       watcher.add(res)
@@ -38,9 +38,9 @@ function start() {
       return logger.error(pathname +' -> '+ file.message)
     }
 
-    var type = file.substr(file.lastIndexOf('.') + 1),
-      mimetype = mime[type] || mime.html,
-      contents = ''
+    var type = file.substr(file.lastIndexOf('.') + 1)
+    var mimetype = mime[type] || mime.html
+    var contents = ''
 
     res.writeHead(200, header(mimetype))
     contents = fs.readFileSync(file).toString()
@@ -52,9 +52,10 @@ function start() {
 
     logger.ok(pathname +' -> '+ file)
 
-  }).listen(port);
+  }).listen(port)
 
-  logger.info('Server running on port '+ port)
+  logger.info('Server running at http://localhost'
+    + (port != 80 ? ':'+ port : '') +'/')
   logger.info('Serving static files from path '+ path.resolve(basepath))
 }
 

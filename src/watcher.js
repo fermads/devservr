@@ -7,7 +7,6 @@ var basepath = './'
 
 function init(options) {
   basepath = options.basepath || basepath
-
   watch()
 }
 
@@ -29,7 +28,7 @@ function watch() {
         // the file was written to disk. Wait a few ms then
         setTimeout(reload, 200)
       }
-    });
+    })
 
     logger.info('Monitoring path '+ path.resolve(basepath) + ' for changes')
   }
@@ -41,7 +40,7 @@ function watch() {
 
 function reload() {
   for (var r in requests) {
-    requests[r].end('RELOAD');
+    requests[r].end('RELOAD')
   }
 
   requests = [] // reset

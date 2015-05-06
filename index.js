@@ -3,8 +3,18 @@
 var server = require('./src/server')
 var router = require('./src/router')
 var watcher = require('./src/watcher')
-var options = require('./src/cmdline')
+var cmdline = require('./src/cmdline')
 
-server.init(options)
-watcher.init(options)
-router.init(options)
+function run(opts) {
+  var options = opts || cmdline.args()
+  server.init(options)
+  watcher.init(options)
+  router.init(options)
+}
+
+if(!module.parent) // executed via command line
+  return run()
+
+module.exports = { // require()'d by another file or module
+  run: run
+}

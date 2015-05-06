@@ -9,6 +9,7 @@ dynamic routes
 
 ## Usage
 
+### Command line tool
     devservr [port] [basepath] [routesfile]
 
 - **port**: port to Server.listen. Defaults to 80
@@ -19,6 +20,23 @@ devservr/etc/routes.json
 
 Parameters can be passed in any order, as long as routes.json ends with ".json"
 
+### As a module
+```js
+var devservr = require('devservr')
+devservr.run({port:[port], basepath:[basepath], routesfile:[routesfile]})
+```
+
+### With Gulp
+```js
+var devservr = require('devservr')
+gulp.task('test', function () {
+  gulp.src([paths])
+  .pipe(something())
+  .pipe(gulp.dest('path')).on('end', function() {
+    devservr.run({options})
+  })
+})
+```
 
 ## Live-reload
 All .html and .htm files will auto reload when any change inside `basepath`
