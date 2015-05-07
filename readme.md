@@ -16,7 +16,7 @@ dynamic routes
 - **basepath**: root path for static files and also the path to watch for
 live-reload. Defaults to ./
 - **routesfile**: a .json file with webserver routes. Defaults to
-devservr/etc/routes.json
+./routes.json (if exists) then devservr/etc/routes.json
 
 Parameters can be passed in any order, as long as routes.json ends with ".json"
 
@@ -24,18 +24,6 @@ Parameters can be passed in any order, as long as routes.json ends with ".json"
 ```js
 var devservr = require('devservr')
 devservr.run({port:[port], basepath:[basepath], routesfile:[routesfile]})
-```
-
-### With Gulp
-```js
-var devservr = require('devservr')
-gulp.task('test', function () {
-  gulp.src([paths])
-  .pipe(something())
-  .pipe(gulp.dest('path')).on('end', function() {
-    devservr.run({options})
-  })
-})
 ```
 
 ## Live-reload
@@ -110,7 +98,6 @@ not cached.
 
 ## To-do
 - directory listings
-- default routes.json should try ./routes.json first
 - routes should accept a status code as a response to make it easy to test
 REST services. { "/api/save" : 200 }
 - looks like fs.watch on windows with {recursive:true} is not recursive.

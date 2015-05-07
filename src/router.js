@@ -8,7 +8,8 @@ var basepath
 
 function init(options) {
   basepath = options.basepath || './'
-  routefile = options.routefile || routefile
+  routefile = options.routefile
+    || (isFile('./routes.json') ? 'routes.json' : routefile)
   load()
 }
 
@@ -53,7 +54,7 @@ function match(url) {
   return filepath(url)
 }
 
-function fileOk(file) {
+function isFile(file) {
   var stat
 
   try {
@@ -66,11 +67,11 @@ function fileOk(file) {
   return stat.isFile() ? true : false
 }
 
-function isDirectory(file) {
+function isDirectory(dir) {
   var stat
 
   try {
-    stat = fs.statSync(file)
+    stat = fs.statSync(dir)
   }
   catch(e) {
     return false
@@ -86,9 +87,9 @@ function filepath(url) {
   if(routes['*/'] && isDirectory(fileFromUrl))
     return filepath(url +'/'+ routes['*/'])
 
-  if(fileOk(fileFromUrl))
+  if(isFile(fileFromUrl))
     return fileFromUrl
-  else if(fileOk(fileNotFound))
+  else if(isFile(fileNotFound))
     return fileNotFound
   else
     return Error(fileFromUrl)
