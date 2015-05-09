@@ -39,37 +39,49 @@ A small javascript code snippet will be dynamically inserted before the
 ##### Exact routes
 Routes with exact match.
 
-    "/test" : "/test.html"
+    "/test" : "/test/test.html"
 
-When path is "/test" serve file "/test/test.html"
+_Example_: `http://localhost/test` will serve file `/test/test.html`
 
 
 ##### Variable routes
-Urls with variables.
+URLs with variables.
 
     "/product/:id" : "/product.html"
 
-Path /product with any :id will match to /product.html. Your frontend should
-work with the id to do something
+Path `/product` with any `:id` will match to `/product.html`. Single page app
+frontend should work with the id to do something
+
+_Example_: `http://localhost/product/123` will serve file `/product.html`
 
 
 ##### Automatic routes
-Routes that will serve files from disc if the url is the same as the path of a
-static file
+Routes that will serve files from disc if the path part of the URL is the same
+as the path of a static file
 
+_Example_: `http://localhost/test.html` will automatically try to serve
+file `./test.html` from disc, if it exists
 
 ##### The */ route
 Default file for paths that point to a directory
 
     "*/": "index.html"
 
+_Example_: `http://localhost/` will automatically try to serve
+file `./index.html` from disc, if it exists
 
 ##### The * route
 This will be the "else" route if every other route fails to match and there is
 no static file on disc with that path. Usually a 404 not found page.
 
+    "*": "404.html"
+
+_Example_: `http://localhost/notFound` will not find any route nor file on
+disc for 'notFound' then will serve `./404.html`
 
 ##### Default routes.json
+This basic routes.json will be used if none is provided
+
 ```json
 {
     "*/" : "index.html",
