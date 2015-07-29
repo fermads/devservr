@@ -43,10 +43,11 @@ function start() {
     var contents = ''
 
     res.writeHead(200, header(mimetype))
-    contents = fs.readFileSync(file).toString()
+    contents = fs.readFileSync(file)
 
     if(mimetype == mime.html) // add live-reload snippet if html
-      res.end(contents.replace('</body>', snippet.toString() +'</body>'))
+      res.end(contents.toString().replace('</body>',
+        snippet.toString() +'</body>'))
     else
       res.end(contents)
 
