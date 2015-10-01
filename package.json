@@ -1,12 +1,23 @@
 {
   "name": "devservr",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Webserver for quick development of single page apps with live-reload and dynamic routes",
   "main": "index.js",
+  "author": "fermads",
   "bin": "./index.js",
+  "homepage": "https://github.com/fermads/devservr",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fermads/devservr.git"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ."
+  },
+  "bugs": {
+    "url": "https://github.com/fermads/devservr/issues"
   },
   "keywords": [
     "web",
@@ -14,6 +25,5 @@
     "http",
     "development"
   ],
-  "author": "fermads",
-  "license": "ISC"
+  "license": "MIT"
 }
