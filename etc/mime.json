@@ -11,5 +11,12 @@
   "jpg"  : "image/jpeg",
   "jpeg" : "image/jpeg",
   "gif"  : "image/gif",
-  "png"  : "image/png"
+  "svg"  : "image/svg+xml",
+  "png"  : "image/png",
+  "woff2": "application/font-woff2",
+  "woff" : "application/font-woff",
+  "ttf"  : "application/x-font-ttf",
+  "otf"  : "application/x-font-opentype",
+  "eot"  : "application/vnd.ms-fontobject",
+  "sfnt" : "application/font-sfnt"
 }

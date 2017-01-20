@@ -10,7 +10,7 @@ function args() {
 
     if (parseInt(value, 10))
       port = parseInt(value, 10)
-    else if(value.indexOf('.json') != -1)
+    else if(value.indexOf('.json') !== -1)
       routefile = value
     else
       basepath = value

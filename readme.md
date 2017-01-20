@@ -12,11 +12,11 @@ dynamic routes
 ### Command line tool
     devservr [port] [basepath] [routesfile]
 
-- **port**: port to Server.listen. Defaults to 80
+- **port**: port to `Server.listen`. Defaults to 80
 - **basepath**: root path for static files and also the path to watch for
-live-reload. Defaults to ./
+live-reload. Defaults to `./`
 - **routesfile**: a .json file with webserver routes. Defaults to
-./routes.json (if exists) then devservr/etc/routes.json
+./routes.json (if exists) then `devservr/etc/routes.json`
 
 Parameters can be passed in any order, as long as routes.json ends with ".json"
 

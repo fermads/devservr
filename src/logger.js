@@ -3,7 +3,7 @@ var colors = {
   'ok'    : '\033[32m[200] ',
   'error' : '\033[31m[404] ',
   'time'  : '\033[1;30m',
-  'reset' : '\033[39m'
+  'reset' : '\x1b[0m'
 }
 
 function ok(message){
@@ -19,7 +19,7 @@ function info(message) {
 }
 
 function log(message) {
-  var time = colors.time + (new Date()).toTimeString().substr(0,8)
+  var time = colors.time + (new Date()).toTimeString().substr(0, 8)
     + colors.reset
 
   console.log('['+ time +'] ' + message)
